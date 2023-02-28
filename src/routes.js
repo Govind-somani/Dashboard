@@ -3,13 +3,13 @@ import { Navigate } from "react-router-dom";
 import SignIn from "./Screens/Auth/SignIn";
 import DashboardLayout from "./Layout/DashboardLayout";
 import MainLayout from "./Layout/MainLayout";
+import Dashboard from "./Screens/App/DashBoard/Dashboard";
+
 const routes = () => [
   {
     path: "app",
     element: <DashboardLayout />,
-    children: [
-      // {path:"", element:< />}
-    ],
+    children: [{ path: "", element: <Dashboard /> }],
   },
   {
     path: "/",

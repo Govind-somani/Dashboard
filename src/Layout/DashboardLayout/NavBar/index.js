@@ -33,26 +33,26 @@ const items = [
     icon: BarChartIcon,
     title: "Dashboard",
   },
-  // {
-  //   href: '/app/employees',
-  //   icon: UsersIcon,
-  //   title: 'Employees'
-  // },
-  // {
-  //   href: '/app/attendance',
-  //   icon: UsersIcon,
-  //   title: 'Attendance Record'
-  // },
-  // {
-  //   href: '/app/clients',
-  //   icon: UsersIcon,
-  //   title: 'Clients'
-  // },
-  // {
-  //   href: '/app/projects',
-  //   icon: UsersIcon,
-  //   title: 'Projects'
-  // },
+  {
+    // href: '/app/employees',
+    icon: UsersIcon,
+    title: "Members",
+  },
+  {
+    // href: '/app/attendance',
+    icon: UsersIcon,
+    title: "Wallet",
+  },
+  {
+    // href: '/app/clients',
+    icon: UsersIcon,
+    title: "Reports",
+  },
+  {
+    // href: '/app/projects',
+    icon: UsersIcon,
+    title: "Withdraw Request",
+  },
   // {
   //   href: '/app/tasks',
   //   icon: SettingsIcon,
@@ -96,7 +96,8 @@ const useStyles = makeStyles(() => ({
     width: 256,
   },
   desktopDrawer: {
-    width: 256,
+    marginTop: 65,
+    width: 265,
     top: 64,
     height: "calc(100% - 64px)",
   },
@@ -168,10 +169,9 @@ const NavBar = ({ onMobileClose, openMobile }) => {
           {content}
         </Drawer>
       </Hidden>
-      <Hidden mdDown style={{ marginTop: " 65px" }}>
+      <Hidden mdDown>
         <Drawer
           anchor="left"
-          style={{ marginTop: " 65px" }}
           classes={{ paper: classes.desktopDrawer }}
           open
           variant="persistent"
