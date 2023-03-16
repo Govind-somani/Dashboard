@@ -15,12 +15,12 @@ const useStyles = makeStyles((theme) => ({
   },
   wrapper: {
     display: "flex",
-    // flex: "1 1 auto",
+    flex: "1 1 auto",
     overflow: "hidden",
     paddingTop: 64,
-    [theme.breakpoints.up("lg")]: {
-      paddingLeft: 256,
-    },
+    // [theme.breakpoints.up("lg")]: {
+    //   paddingLeft: 256,
+    // },
   },
   contentContainer: {
     display: "flex",
@@ -40,9 +40,7 @@ const DashboardLayout = () => {
 
   return (
     <div className={classes.root}>
-      <TopBar
-        onMobileNavOpen={() => console.log("click me", setMobileNavOpen(true))}
-      />
+      <TopBar onMobileNavOpen={() => setMobileNavOpen(true)} />
       <NavBar
         onMobileClose={() => setMobileNavOpen(false)}
         openMobile={isMobileNavOpen}

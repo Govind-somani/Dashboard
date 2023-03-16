@@ -34,7 +34,7 @@ const items = [
     title: "Dashboard",
   },
   {
-    // href: '/app/employees',
+    href: "/app/user",
     icon: UsersIcon,
     title: "Members",
   },
@@ -173,7 +173,8 @@ const NavBar = ({ onMobileClose, openMobile }) => {
         <Drawer
           anchor="left"
           classes={{ paper: classes.desktopDrawer }}
-          open
+          open={openMobile}
+          onClose={onMobileClose}
           variant="persistent"
         >
           {content}

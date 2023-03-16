@@ -1,5 +1,6 @@
 import * as React from "react";
 import { Link as RouterLink, useNavigate } from "react-router-dom";
+import clsx from "clsx";
 
 import { styled, alpha } from "@mui/material/styles";
 import AppBar from "@mui/material/AppBar";
@@ -17,6 +18,8 @@ import AccountCircle from "@mui/icons-material/AccountCircle";
 import MailIcon from "@mui/icons-material/Mail";
 import NotificationsIcon from "@mui/icons-material/Notifications";
 import MoreIcon from "@mui/icons-material/MoreVert";
+import { Hidden } from "@mui/material";
+import { makeStyles } from "@mui/styles";
 
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
@@ -57,8 +60,17 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
     },
   },
 }));
+const useStyles = makeStyles(() => ({
+  root: {},
+  avatar: {
+    width: 60,
+    height: 60,
+  },
+}));
 
-const TopBar = ({ onMobileNavOpen }) => {
+const TopBar = ({ onMobileNavOpen, className, ...rest }) => {
+  const classes = useStyles();
+
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
   const navigate = useNavigate();
@@ -168,32 +180,32 @@ const TopBar = ({ onMobileNavOpen }) => {
         >
           <InputIcon />
         </IconButton>
+        <p>Logout</p>
       </MenuItem>
     </Menu>
   );
 
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static">
+      <AppBar className={clsx(classes.root, className)} elevation={0} {...rest}>
+        {" "}
         <Toolbar>
-          <IconButton
+          <Hidden lgup>
+            <IconButton color="inherit" onClick={onMobileNavOpen}>
+              <MenuIcon />
+            </IconButton>
+          </Hidden>
+          {/* <IconButton
             size="large"
-            edge="start"
+            // edge="start"
             color="inherit"
             aria-label="open drawer"
             sx={{ mr: 2 }}
             onClick={onMobileNavOpen}
           >
             <MenuIcon />
-          </IconButton>
-          {/* <Typography
-            variant="h6"
-            noWrap
-            component="div"
-            sx={{ display: { xs: "none", sm: "block" } }}
-          >
-            MUI
-          </Typography> */}
+          </IconButton> */}
+
           <Search>
             <SearchIconWrapper>
               <SearchIcon />

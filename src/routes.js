@@ -4,12 +4,16 @@ import SignIn from "./Screens/Auth/SignIn";
 import DashboardLayout from "./Layout/DashboardLayout";
 import MainLayout from "./Layout/MainLayout";
 import Dashboard from "./Screens/App/DashBoard/Dashboard";
-
+import UserList from "./Screens/App/Member/User";
 const routes = () => [
   {
     path: "app",
     element: <DashboardLayout />,
-    children: [{ path: "", element: <Dashboard /> }],
+    children: [
+      { path: "dashboard", element: <Dashboard /> },
+      { path: "user", element: <UserList /> },
+      { path: "*", element: <Navigate to="/404" /> },
+    ],
   },
   {
     path: "/",

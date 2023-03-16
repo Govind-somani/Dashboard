@@ -6,6 +6,7 @@ import routes from "../routes";
 // import * as authActions from '../store/actions/auth';
 
 const ProtectedRoutes = () => {
+  console.log(routes());
   // const dispatch = useDispatch();
   // const { token } = useSelector((state) => state.auth);
 
