@@ -7,7 +7,7 @@ import { useState } from "react";
 
 export default function UserList() {
   const [data, setData] = useState(userRows);
-
+console.log(data)
   const handleDelete = (id) => {
     setData(data.filter((item) => item.id !== id));
   };
@@ -57,9 +57,9 @@ export default function UserList() {
       },
     },
   ];
-
   return (
     <div className="userList">
+      {console.log("Data========", data)}
       <DataGrid
         rows={data}
         disableSelectionOnClick

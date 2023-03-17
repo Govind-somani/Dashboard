@@ -27,6 +27,7 @@ const useStyles = makeStyles((theme) => ({
     flex: "1 1 auto",
     height: "100%",
     overflow: "auto",
+    marginTop: "35px",
   },
 }));
 

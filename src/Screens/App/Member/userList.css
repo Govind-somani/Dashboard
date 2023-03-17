@@ -1,5 +1,7 @@
 .userList {
-  flex: 4;
+  /* flex: 4; */
+  display: flex;
+  height: 80%;
 }
 
 .userListUser {

@@ -5,8 +5,10 @@ import DashboardLayout from '../../../Layout/DashboardLayout'
 const Dashboard=()=> {
   return (
     <>
-  
+    <div className='home'>
     <FeaturedInfo />
+    </div>
+    
 
     </>
   )

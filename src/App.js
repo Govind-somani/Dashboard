@@ -5,10 +5,12 @@
 import ProtectedRoutes from "./Layout/ProtectedRoutes";
 import { ThemeProvider } from "@mui/material/styles";
 import theme from "./theme";
+import GlobalStyles from "./Compnonent/GlobalStyles";
 // import UserList from "./Screens/App/Member/User";
 const App = () => {
   return (
     <ThemeProvider theme={theme}>
+      <GlobalStyles />
       <ProtectedRoutes />
     </ThemeProvider>
   );
