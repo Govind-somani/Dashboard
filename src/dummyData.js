@@ -90,3 +90,9 @@ export const userRows = [
     transaction: "$120.00",
   },
 ];
+
+export const dataRecord = [
+  { "Total Table ": 8 },
+  { "TableWise Report": "" },
+  { "GameWise Report": "" },
+];
